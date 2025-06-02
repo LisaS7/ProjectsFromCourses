@@ -9,14 +9,19 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] ParticleSystem crashSnowEffect;
     [SerializeField] AudioClip crashAudio;
     [SerializeField] AudioClip owAudio;
-    [SerializeField] AudioSource audioSource;
     [SerializeField] float soundGap = 0.2f;
+
+    bool hasCrashed;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Ground")
+        if (collision.tag == "Ground" && !hasCrashed)
         {
-            if (audioSource)
+            hasCrashed = true;
+
+            FindAnyObjectByType<PlayerController>().DisableControls();
+
+            if (crashAudio && owAudio)
             {
                 StartCoroutine(PlayCrashSounds());
             }
@@ -33,6 +38,7 @@ public class CrashDetector : MonoBehaviour
 
     IEnumerator PlayCrashSounds()
     {
+        AudioSource audioSource = FindAnyObjectByType<AudioSource>();
         audioSource.PlayOneShot(crashAudio);
         yield return new WaitForSeconds(soundGap);
         audioSource.PlayOneShot(owAudio);
