@@ -18,3 +18,4 @@ MonoBehaviour:
   - Lists all system users and their permissions
   - Configures automatic mounting of filesystems
   - Sets default file permissions
+  correctAnswerIndex: 2

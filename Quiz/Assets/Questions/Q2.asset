@@ -19,3 +19,4 @@ MonoBehaviour:
   - ps aux | grep net
   - lsof -i
   - ping -a
+  correctAnswerIndex: 2

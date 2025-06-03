@@ -18,3 +18,4 @@ MonoBehaviour:
   - They consume more disk space than the original file
   - Deleting the original file breaks the symlink
   - They can span across different filesystems
+  correctAnswerIndex: 1

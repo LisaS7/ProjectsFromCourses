@@ -18,3 +18,4 @@ MonoBehaviour:
   - Pauses execution for confirmation
   - Runs the next command only if the previous one succeeded
   - Logs both commands to syslog
+  correctAnswerIndex: 2

@@ -18,3 +18,4 @@ MonoBehaviour:
   - Grants full permissions to the owner, read/execute to the group, none to others
   - Grants read/write to owner and group, execute to others
   - Makes the file hidden and read-only
+  correctAnswerIndex: 1
