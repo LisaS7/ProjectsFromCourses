@@ -1,12 +1,14 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class Quiz : MonoBehaviour
 {
     [Header("Questions")]
     [SerializeField] TextMeshProUGUI questionText;
-    [SerializeField] QuestionSO question;
+    [SerializeField] List<QuestionSO> questions = new();
+    QuestionSO currentQuestion;
 
     [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
@@ -18,10 +20,22 @@ public class Quiz : MonoBehaviour
     [SerializeField] Image timerImage;
     Timer timer;
 
+    [Header("Scoring")]
+    [SerializeField] TextMeshProUGUI scoreText;
+    ScoreKeeper scoreKeeper;
+
+    [Header("Progress Bar")]
+    [SerializeField] Slider progressBar;
+
+    public bool isComplete;
+
+
     void Start()
     {
         timer = FindAnyObjectByType<Timer>();
-        GetNextQuestion();
+        scoreKeeper = FindAnyObjectByType<ScoreKeeper>();
+        progressBar.maxValue = questions.Count;
+        progressBar.value = 0;
     }
 
     void Update()
@@ -39,7 +53,6 @@ public class Quiz : MonoBehaviour
             SetButtonState(false);
         }
 
-
     }
 
     public void OnAnswerSelected(int index)
@@ -48,21 +61,28 @@ public class Quiz : MonoBehaviour
         DisplayAnswer(index);
         SetButtonState(false);
         timer.CancelTimer();
+        scoreText.text = $"Score: {scoreKeeper.CalculateScore()}%";
+
+        if (progressBar.value == progressBar.maxValue)
+        {
+            isComplete = true;
+        }
     }
 
     void DisplayAnswer(int index)
     {
-        int correctAnswerIndex = question.GetCorrectAnswerIndex();
+        int correctAnswerIndex = currentQuestion.GetCorrectAnswerIndex();
         Image buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
         buttonImage.sprite = correctAnswerSprite;
 
         if (index == correctAnswerIndex)
         {
             questionText.text = "Correct";
+            scoreKeeper.IncrementCorrectAnswers();
         }
         else
         {
-            string correctAnswer = question.GetAnswer(correctAnswerIndex);
+            string correctAnswer = currentQuestion.GetAnswer(correctAnswerIndex);
             questionText.text = $"Nope. The correct answer is \n{correctAnswer}";
         }
     }
@@ -70,19 +90,39 @@ public class Quiz : MonoBehaviour
 
     void GetNextQuestion()
     {
-        SetButtonState(true);
-        SetDefaultButtonSprites();
-        DisplayQuestion();
+        if (questions.Count > 0)
+        {
+            SetButtonState(true);
+            SetDefaultButtonSprites();
+            GetRandomQuestion();
+            DisplayQuestion();
+            progressBar.value++;
+            scoreKeeper.IncrementQuestionsSeen();
+
+        }
+    }
+
+    void GetRandomQuestion()
+    {
+        int index = Random.Range(0, questions.Count);
+        currentQuestion = questions[index];
+
+        if (questions.Contains(currentQuestion))
+        {
+            questions.Remove(currentQuestion);
+
+        }
+
     }
 
     void DisplayQuestion()
     {
-        questionText.text = question.GetQuestion();
+        questionText.text = currentQuestion.GetQuestion();
 
         for (int i = 0; i < answerButtons.Length; i++)
         {
             TextMeshProUGUI buttonText = answerButtons[i].GetComponentInChildren<TextMeshProUGUI>();
-            buttonText.text = question.GetAnswer(i);
+            buttonText.text = currentQuestion.GetAnswer(i);
         }
 
     }
