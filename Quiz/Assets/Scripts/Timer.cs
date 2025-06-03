@@ -17,7 +17,12 @@ public class Timer : MonoBehaviour
 
     public void CancelTimer()
     {
-        timerValue = 0;
+        if (isAnsweringQuestion)
+        {
+            isAnsweringQuestion = false;
+            timerValue = answerTotalTime;
+        }
+
     }
 
     void UpdateTimer()
@@ -50,6 +55,6 @@ public class Timer : MonoBehaviour
 
             }
         }
-        
+
     }
 }
