@@ -4,18 +4,53 @@ using UnityEngine.UI;
 
 public class Quiz : MonoBehaviour
 {
+    [Header("Questions")]
     [SerializeField] TextMeshProUGUI questionText;
     [SerializeField] QuestionSO question;
+
+    [Header("Answers")]
     [SerializeField] GameObject[] answerButtons;
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
+    bool hasAnsweredEarly;
+
+    [Header("Timer")]
+    [SerializeField] Image timerImage;
+    Timer timer;
 
     void Start()
     {
+        timer = FindAnyObjectByType<Timer>();
         GetNextQuestion();
     }
 
+    void Update()
+    {
+        timerImage.fillAmount = timer.fillFraction;
+        if (timer.loadNextQuestion)
+        {
+            hasAnsweredEarly = false;
+            GetNextQuestion();
+            timer.loadNextQuestion = false;
+        }
+        else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
+        {
+            DisplayAnswer(-1);
+            SetButtonState(false);
+        }
+
+
+    }
+
     public void OnAnswerSelected(int index)
+    {
+        hasAnsweredEarly = true;
+        DisplayAnswer(index);
+        SetButtonState(false);
+        timer.CancelTimer();
+    }
+
+    void DisplayAnswer(int index)
     {
         int correctAnswerIndex = question.GetCorrectAnswerIndex();
         Image buttonImage = answerButtons[correctAnswerIndex].GetComponent<Image>();
@@ -30,14 +65,12 @@ public class Quiz : MonoBehaviour
             string correctAnswer = question.GetAnswer(correctAnswerIndex);
             questionText.text = $"Nope. The correct answer is \n{correctAnswer}";
         }
-
-        setButtonState(false);
     }
 
 
     void GetNextQuestion()
     {
-        setButtonState(true);
+        SetButtonState(true);
         SetDefaultButtonSprites();
         DisplayQuestion();
     }
@@ -54,7 +87,7 @@ public class Quiz : MonoBehaviour
 
     }
 
-    void setButtonState(bool state)
+    void SetButtonState(bool state)
     {
         for (int i = 0; i < answerButtons.Length; i++)
         {
