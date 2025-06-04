@@ -41,5 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1817333707
+    locked: 0
+  - name: Water
+    uniqueID: 1616309393
+    locked: 0
+  - name: Platforms
+    uniqueID: 2042542637
+    locked: 0
   m_RenderingLayers:
   - Default
