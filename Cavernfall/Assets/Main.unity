@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 296563703}
   - component: {fileID: 296563702}
   - component: {fileID: 296563701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26218,9 +26218,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4938061095740956518, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
+      propertyPath: runSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938061095740956518, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
+      propertyPath: jumpSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5984346615269458388, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
       propertyPath: m_Name
       value: WeeMan
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964900341977597425, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
+      propertyPath: m_GravityScale
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964900341977597425, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
