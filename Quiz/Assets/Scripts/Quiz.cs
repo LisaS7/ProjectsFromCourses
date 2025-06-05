@@ -135,7 +135,7 @@ public class Quiz : MonoBehaviour
     {
         for (int i = 0; i < answerButtons.Length; i++)
         {
-            Button button = answerButtons[1].GetComponent<Button>();
+            Button button = answerButtons[i].GetComponent<Button>();
             button.interactable = state;
         }
     }
