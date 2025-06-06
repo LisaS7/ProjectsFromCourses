@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     CapsuleCollider2D feetCollider;
 
     float baseGravity;
+    bool isAlive = true;
+    Vector2 deathAction = new Vector2(5f, 15f);
 
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 8f;
@@ -29,19 +32,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive) { return; }
+
         Run();
         FlipSprite();
         ClimbLadder();
+        Die();
+
     }
 
     void OnMove(InputValue value)
     {
+        if (!isAlive) { return; }
         moveInput = value.Get<Vector2>();
-
     }
 
     void OnJump(InputValue value)
     {
+        if (!isAlive) { return; }
         if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
         if (value.isPressed)
@@ -88,6 +96,16 @@ public class PlayerMovement : MonoBehaviour
         bool hasVerticalSpeed = Mathf.Abs(playerRB.linearVelocityY) > Mathf.Epsilon;
         animator.SetBool("isClimbing", hasVerticalSpeed);
 
+    }
+
+    void Die()
+    {
+        if (bodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy")))
+        {
+            isAlive = false;
+            animator.SetTrigger("Dying");
+            playerRB.linearVelocity = deathAction;
+        }
     }
 
 }
