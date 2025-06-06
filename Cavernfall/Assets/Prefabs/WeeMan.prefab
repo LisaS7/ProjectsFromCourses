@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 5889876320069280909}
   - component: {fileID: 2919592007608912727}
   - component: {fileID: 4938061095740956518}
-  m_Layer: 0
+  - component: {fileID: 678494725520157074}
+  m_Layer: 8
   m_Name: WeeMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +102,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1290368451
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1525884444, guid: ce207c7d5a4824d4ba05a7fb5f3fb9ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -129,7 +130,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -139,7 +140,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &5889876320069280909
 BoxCollider2D:
@@ -151,7 +152,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 279f371bb2b22475ea58ca4e6081bf02, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -229,5 +230,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515e60425b1d6447fb56ada544e74e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
-  jumpSpeed: 5
+  runSpeed: 7
+  jumpSpeed: 20
+  climbSpeed: 4
+--- !u!70 &678494725520157074
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984346615269458388}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.03906348, y: -0.44199616}
+  m_Size: {x: 0.49558765, y: 0.15146162}
+  m_Direction: 1

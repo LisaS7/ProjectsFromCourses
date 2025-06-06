@@ -28019,37 +28019,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4938061095740956518, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: runSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938061095740956518, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: jumpSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5889876320069280909, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 279f371bb2b22475ea58ca4e6081bf02, type: 2}
     - target: {fileID: 5984346615269458388, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
       propertyPath: m_Name
       value: WeeMan
-      objectReference: {fileID: 0}
-    - target: {fileID: 5984346615269458388, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8964900341977597425, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8964900341977597425, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: m_GravityScale
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8964900341977597425, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
