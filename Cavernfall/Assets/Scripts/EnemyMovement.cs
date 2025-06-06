@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
         enemyRB.linearVelocity = new Vector2(moveSpeed, 0);
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         moveSpeed = -moveSpeed;
         FlipEnemy();
