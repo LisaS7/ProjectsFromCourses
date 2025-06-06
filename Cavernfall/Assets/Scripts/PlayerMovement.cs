@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 8f;
     [SerializeField] float climbSpeed = 4f;
-    [SerializeField] float waterDrag = 5f;
+    [SerializeField] float waterDrag = 3f;
 
 
 
@@ -130,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
             isAlive = false;
             animator.SetTrigger("Dying");
             playerRB.linearVelocity = deathAction;
+            FindAnyObjectByType<GameSession>().ProcessPlayerDeath();
         }
     }
 

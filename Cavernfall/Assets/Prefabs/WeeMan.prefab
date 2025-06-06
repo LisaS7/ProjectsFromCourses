@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 678494725520157074}
   m_Layer: 8
   m_Name: WeeMan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1290368451
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1525884444, guid: ce207c7d5a4824d4ba05a7fb5f3fb9ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -267,6 +267,7 @@ MonoBehaviour:
   runSpeed: 7
   jumpSpeed: 20
   climbSpeed: 4
+  waterDrag: 5
 --- !u!70 &678494725520157074
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
