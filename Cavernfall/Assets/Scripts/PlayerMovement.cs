@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     BoxCollider2D bodyCollider;
     CapsuleCollider2D feetCollider;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
 
     float baseGravity;
     bool isAlive = true;
@@ -57,6 +59,12 @@ public class PlayerMovement : MonoBehaviour
             playerRB.linearVelocity += new Vector2(0f, jumpSpeed);
         }
 
+    }
+
+    void OnFire(InputValue value)
+    {
+        if (!isAlive) { return; }
+        Instantiate(bullet, gun.position, transform.rotation);
     }
 
     void Run()
