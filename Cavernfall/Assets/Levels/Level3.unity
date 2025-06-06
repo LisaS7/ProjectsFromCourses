@@ -32576,6 +32576,63 @@ PolygonCollider2D:
       - {x: 45.66748, y: 0.70949554}
       - {x: 45.45821, y: 23.438152}
   m_UseDelaunayMesh: 0
+--- !u!1001 &1121019545
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2886134323587803309, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_Name
+      value: GameSession
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.68849
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.10815
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535131960519438343, guid: 52545b26174054e59bb22a4999927597, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 52545b26174054e59bb22a4999927597, type: 3}
 --- !u!1001 &1347865905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37641,6 +37698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeeMan
       objectReference: {fileID: 0}
+    - target: {fileID: 5984346615269458388, guid: b1b24135df84f46c4a591d01456c5336, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37662,3 +37723,4 @@ SceneRoots:
   - {fileID: 492390124}
   - {fileID: 750384157}
   - {fileID: 1458501958}
+  - {fileID: 1121019545}
