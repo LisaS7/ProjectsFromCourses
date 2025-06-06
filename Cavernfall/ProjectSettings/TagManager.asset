@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -45,9 +46,6 @@ TagManager:
   - name: Background
     uniqueID: 1817333707
     locked: 0
-  - name: Water
-    uniqueID: 1616309393
-    locked: 0
   - name: Platforms
     uniqueID: 2042542637
     locked: 0
@@ -56,6 +54,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3004598845
+    locked: 0
+  - name: Water
+    uniqueID: 1616309393
     locked: 0
   m_RenderingLayers:
   - Default

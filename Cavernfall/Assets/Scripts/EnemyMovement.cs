@@ -1,3 +1,5 @@
+using System.Collections;
+using TreeEditor;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -9,22 +11,30 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         enemyRB = GetComponent<Rigidbody2D>();
+        FaceDirection();
     }
 
 
     void Update()
     {
-        enemyRB.linearVelocity = new Vector2(moveSpeed, 0);
+        enemyRB.linearVelocityX = moveSpeed;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         moveSpeed = -moveSpeed;
-        FlipEnemy();
+        FaceDirection();
     }
 
-    void FlipEnemy()
+    // void FlipEnemy()
+    // {
+    //     transform.localScale = new Vector2(-Mathf.Sign(enemyRB.linearVelocityX), 1f);
+
+    // }
+
+    void FaceDirection()
     {
-        transform.localScale = new Vector2(-Mathf.Sign(enemyRB.linearVelocityX), 1f);
+        transform.localScale = new Vector2(Mathf.Sign(moveSpeed), 1f);
     }
 }
