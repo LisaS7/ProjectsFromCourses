@@ -9,6 +9,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileLifetime = 5f;
     [SerializeField] float firingRate = 0.2f;
+    [SerializeField] bool useAI;
 
     public bool isFiring = false;
 
@@ -17,6 +18,11 @@ public class Shooter : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (useAI)
+        {
+            isFiring = true;
+        }
     }
 
 
@@ -49,7 +55,7 @@ public class Shooter : MonoBehaviour
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.linearVelocity = transform.up * projectileSpeed;
+                rb.linearVelocity = firePoint.up * projectileSpeed;
             }
 
             Destroy(instance, projectileLifetime);
