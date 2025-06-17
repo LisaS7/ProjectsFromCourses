@@ -3,15 +3,20 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("General")]
     Animator animator;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] Transform firePoint;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileLifetime = 5f;
-    [SerializeField] float firingRate = 0.2f;
-    [SerializeField] bool useAI;
+    [SerializeField] float baseFiringRate = 0.2f;
 
-    public bool isFiring = false;
+    [Header("AI")]
+    [SerializeField] bool useAI;
+    [SerializeField] float firingVariance = 0f;
+    [SerializeField] float minFiringRate = 0.1f;
+
+    [HideInInspector] public bool isFiring = false;
 
     Coroutine firingCoroutine;
 
@@ -59,7 +64,9 @@ public class Shooter : MonoBehaviour
             }
 
             Destroy(instance, projectileLifetime);
-            yield return new WaitForSeconds(firingRate);
+            float fireTime = Random.Range(baseFiringRate - firingVariance, baseFiringRate + firingVariance);
+            fireTime = Mathf.Clamp(fireTime, minFiringRate, float.MaxValue);
+            yield return new WaitForSeconds(fireTime);
         }
     }
 }

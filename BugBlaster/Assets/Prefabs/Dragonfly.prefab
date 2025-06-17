@@ -266,6 +266,8 @@ MonoBehaviour:
   firePoint: {fileID: 2992223672251324260}
   projectileSpeed: 10
   projectileLifetime: 5
-  firingRate: 1
+  baseFiringRate: 0.2
+  firingVariance: 0.5
+  minFiringRate: 0.1
   useAI: 1
   isFiring: 0
