@@ -5,10 +5,11 @@ public class ExitArea : MonoBehaviour
 {
     public string nextArea;
     public string areaTransitionName;
+    public EnterArea theEntrance;
 
     void Start()
     {
-
+        theEntrance.transitionName = areaTransitionName;
     }
 
 

@@ -615,6 +615,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6435794416596601101, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6435794416596601101, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 7239143207605727119, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
       propertyPath: areaTransitionName
       value: Lake-1
