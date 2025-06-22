@@ -1,3 +1,4 @@
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,8 +8,19 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    public static PlayerController instance;
+
     void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         animator = GetComponent<Animator>();
         DontDestroyOnLoad(gameObject);
     }
