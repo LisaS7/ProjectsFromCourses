@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        DontDestroyOnLoad(gameObject);
     }
 
 
