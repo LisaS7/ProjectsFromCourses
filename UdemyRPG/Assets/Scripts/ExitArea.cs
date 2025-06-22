@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class ExitArea : MonoBehaviour
 {
     public string nextArea;
+    public string areaTransitionName;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class ExitArea : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerController.instance.areaTransitionName = areaTransitionName;
             SceneManager.LoadScene(nextArea);
         }
     }

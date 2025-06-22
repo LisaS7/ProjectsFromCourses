@@ -10,19 +10,27 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
-    void Start()
+    public string areaTransitionName;
+
+    void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+
 
         animator = GetComponent<Animator>();
-        DontDestroyOnLoad(gameObject);
+
     }
 
 

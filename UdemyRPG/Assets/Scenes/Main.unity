@@ -286,7 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 657724850}
-  moveSpeed: 2
+  moveSpeed: 3
+  areaTransitionName: 
 --- !u!95 &657724853
 Animator:
   serializedVersion: 7
@@ -613,6 +614,10 @@ PrefabInstance:
     - target: {fileID: 669669147526338844, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239143207605727119, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
+      propertyPath: areaTransitionName
+      value: Lake-1
       objectReference: {fileID: 0}
     - target: {fileID: 7276590695171780503, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
       propertyPath: m_Name
