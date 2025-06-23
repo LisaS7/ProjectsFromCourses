@@ -8,12 +8,18 @@ public class CameraController : MonoBehaviour
     Vector3 bottomLeftLimit;
     Vector3 topRightLimit;
 
+    float halfHeight;
+    float halfWidth;
+
     void Start()
     {
         target = PlayerController.instance.transform;
 
-        bottomLeftLimit = map.localBounds.min;
-        topRightLimit = map.localBounds.max;
+        halfHeight = Camera.main.orthographicSize;
+        halfWidth = halfHeight * Camera.main.aspect;
+
+        bottomLeftLimit = map.localBounds.min + new Vector3(halfWidth, halfHeight, 0);
+        topRightLimit = map.localBounds.max + new Vector3(-halfWidth, -halfHeight, 0);
     }
 
 
