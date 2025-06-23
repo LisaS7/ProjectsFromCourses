@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     public string areaTransitionName;
+    Vector3 bottomLeftLimit;
+    Vector3 topRightLimit;
 
     void Awake()
     {
@@ -27,10 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
-
         animator = GetComponent<Animator>();
-
     }
 
 
@@ -46,5 +45,17 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
         }
+
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x),
+            Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y),
+            transform.position.z);
     }
+
+    public void SetBounds(Vector3 bottomLeft, Vector3 topRight)
+    {
+        bottomLeftLimit = bottomLeft;
+        topRightLimit = topRight;
+    }
+
 }
