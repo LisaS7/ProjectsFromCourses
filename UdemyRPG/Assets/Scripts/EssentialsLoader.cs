@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class EssentialsLoader : MonoBehaviour
 {
-    public GameObject fadeCanvas;
+    public GameObject UICanvas;
     public GameObject player;
 
     void Start()
     {
         if (UIFade.instance == null)
         {
-            UIFade.instance = Instantiate(fadeCanvas).GetComponent<UIFade>();
+            UIFade.instance = Instantiate(UICanvas).GetComponent<UIFade>();
 
         }
 
