@@ -12,6 +12,7 @@ public class EnterArea : MonoBehaviour
         }
 
         PlayerController.instance.areaTransitionName = "";
+        UIFade.instance.FadeIn();
     }
 
 

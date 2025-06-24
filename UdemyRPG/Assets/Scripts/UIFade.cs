@@ -7,7 +7,7 @@ public class UIFade : MonoBehaviour
     public static UIFade instance;
 
     public Image fadeScreen;
-    public float fadeSpeed;
+    public float fadeSpeed = 1f;
 
     bool shouldFadeOut;
     bool shouldFadeIn;
@@ -15,6 +15,7 @@ public class UIFade : MonoBehaviour
     void Start()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
 
