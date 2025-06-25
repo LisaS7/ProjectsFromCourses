@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     Vector3 bottomLeftLimit;
     Vector3 topRightLimit;
 
+    public bool canMove = true;
+
     void Awake()
     {
         if (instance == null)
@@ -37,21 +39,32 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        if (canMove)
+        {
+            rb.linearVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
 
         animator.SetFloat("moveX", rb.linearVelocityX);
         animator.SetFloat("moveY", rb.linearVelocityY);
 
         if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
         {
-            animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            if (canMove)
+            {
+                animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
         }
 
         transform.position = new Vector3(
             Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x),
             Mathf.Clamp(transform.position.y, bottomLeftLimit.y, topRightLimit.y),
             transform.position.z);
+
     }
 
     public void SetBounds(Vector3 bottomLeft, Vector3 topRight)
