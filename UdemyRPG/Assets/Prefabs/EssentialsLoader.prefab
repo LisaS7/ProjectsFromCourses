@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daac3b4baf8064db6a113f1fdea6eb84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvas: {fileID: 7378483143535677192, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+  UICanvas: {fileID: 7378483143535677192, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
   player: {fileID: 4093657656777701130, guid: ecea31768ecc44a0e8a53888707cd960, type: 3}
