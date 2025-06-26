@@ -74,7 +74,7 @@ public class DialogManager : MonoBehaviour
     {
         if (dialogLines[currentLine].StartsWith("n-"))
         {
-            nameText.text = dialogLines[currentLine];
+            nameText.text = dialogLines[currentLine].Replace("n-", "");
             currentLine++;
         }
     }
