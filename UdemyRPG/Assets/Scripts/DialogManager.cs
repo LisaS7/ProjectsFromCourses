@@ -54,7 +54,7 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void ShowDialogue(string[] newLines)
+    public void ShowDialogue(string[] newLines, bool isPerson)
     {
         dialogLines = newLines;
 
@@ -66,6 +66,8 @@ public class DialogManager : MonoBehaviour
         dialogBox.SetActive(true);
 
         justStarted = true;
+
+        nameBox.SetActive(isPerson);
 
         PlayerController.instance.canMove = false;
     }
