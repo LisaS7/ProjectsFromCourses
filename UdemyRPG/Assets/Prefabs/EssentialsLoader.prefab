@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UICanvas: {fileID: 7378483143535677192, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
   player: {fileID: 4093657656777701130, guid: ecea31768ecc44a0e8a53888707cd960, type: 3}
+  gManager: {fileID: 3522637778930962094, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
