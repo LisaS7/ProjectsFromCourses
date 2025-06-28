@@ -30804,6 +30804,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7378483143535677192, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2142296689}
+    - targetCorrespondingSourceObject: {fileID: 7378483143535677192, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2142296690}
   m_SourcePrefab: {fileID: 100100000, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
 --- !u!1 &2010899856
 GameObject:
@@ -31165,6 +31168,19 @@ MonoBehaviour:
   - Here's the fourth line
   - And now the fifth
   currentLine: 0
+--- !u!114 &2142296690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142296683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ccf012e5af5430e80dac8195039056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPanel: {fileID: 1092035388}
 --- !u!1001 &8373213919786349145
 PrefabInstance:
   m_ObjectHideFlags: 0
