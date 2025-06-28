@@ -16,10 +16,12 @@ public class GameMenu : MonoBehaviour
             if (menuPanel.activeInHierarchy)
             {
                 menuPanel.SetActive(false);
+                GameManager.instance.menuActive = false;
             }
             else
             {
                 menuPanel.SetActive(true);
+                GameManager.instance.menuActive = true;
             }
         }
     }

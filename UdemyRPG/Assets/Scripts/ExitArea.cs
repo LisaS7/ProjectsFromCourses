@@ -35,9 +35,9 @@ public class ExitArea : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             shouldLoadAfterFade = true;
+            GameManager.instance.fadeActive = true;
             UIFade.instance.FadeOut();
             PlayerController.instance.areaTransitionName = areaTransitionName;
-            // SceneManager.LoadScene(nextArea);
         }
     }
 }
