@@ -120,9 +120,21 @@ public class GameMenu : MonoBehaviour
         statsMP.text = $"{playerData[selected].currentMP}/{playerData[selected].maxMP}";
         statsStrength.text = $"{playerData[selected].strength}";
         statsDefence.text = $"{playerData[selected].defence}";
-        statsEquippedWeapon.text = $"{playerData[selected].equippedweapon}";
+
+        if (playerData[selected].equippedweapon != "")
+        {
+            statsEquippedWeapon.text = $"{playerData[selected].equippedweapon}";
+        }
+
+
         statsWeaponPower.text = $"{playerData[selected].weaponPower}";
-        statsEquippedArmour.text = $"{playerData[selected].equippedArmour}";
+
+        if (playerData[selected].equippedArmour != "")
+        {
+            statsEquippedArmour.text = $"{playerData[selected].equippedArmour}";
+        }
+
+
         statsArmourPower.text = $"{playerData[selected].armourPower}";
         statsExp.text = $"{playerData[selected].expToNextLevel}";
 

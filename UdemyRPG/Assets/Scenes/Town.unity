@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -453,7 +453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -19254,7 +19254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -24822,7 +24822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -25230,7 +25230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -28657,7 +28657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: None
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
   m_sharedMaterial: {fileID: 3349348053636548680, guid: c397926254c064edc8d3b4b39b725f57, type: 2}
@@ -28996,6 +28996,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsHP
+      value: 
+      objectReference: {fileID: 378771570}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsMP
+      value: 
+      objectReference: {fileID: 1105478187}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsExp
+      value: 
+      objectReference: {fileID: 115087554}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsName
+      value: 
+      objectReference: {fileID: 581186718}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsImage
+      value: 
+      objectReference: {fileID: 809356714}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsDefence
+      value: 
+      objectReference: {fileID: 1227859333}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsStrength
+      value: 
+      objectReference: {fileID: 283649826}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsArmourPower
+      value: 
+      objectReference: {fileID: 779272762}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsWeaponPower
+      value: 
+      objectReference: {fileID: 394840752}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsEquippedArmour
+      value: 
+      objectReference: {fileID: 1307741589}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: statsEquippedWeapon
+      value: 
+      objectReference: {fileID: 1911872137}
     - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
       propertyPath: playerButtons.Array.size
       value: 3
