@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Main")]
     public static GameManager instance;
     public CharStats[] playerStats;
 
+    [Header("Game Status")]
     public bool menuActive, dialogActive, fadeActive;
+
+    [Header("Items")]
+    public string[] itemsHeld;
+    public int[] itemsQuantity;
+    public Item[] referenceItems;
 
     void Start()
     {
@@ -23,5 +30,17 @@ public class GameManager : MonoBehaviour
         {
             PlayerController.instance.canMove = true;
         }
+    }
+
+    public Item GetItemDetails(string itemNeeded)
+    {
+        for (int i = 0; i < itemsHeld.Length; i++)
+        {
+            if (referenceItems[i].itemName == itemNeeded)
+            {
+                return referenceItems[i];
+            }
+        }
+        return null;
     }
 }
