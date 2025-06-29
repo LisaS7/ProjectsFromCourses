@@ -48,19 +48,27 @@ public class GameMenu : MonoBehaviour
     {
         playerData = GameManager.instance.playerStats;
 
+        if (playerData == null || playerData.Length == 0)
+        {
+            Debug.LogWarning("playerData is null or empty.");
+            return;
+        }
+
         for (int i = 0; i < playerData.Length; i++)
         {
             if (playerData[i].gameObject.activeInHierarchy)
             {
+                CharStats player = playerData[i];
+
                 charStatHolder[i].SetActive(true);
-                nameText[i].text = playerData[i].charName;
-                HPText[i].text = $"HP: {playerData[i].currentHP}/{playerData[i].maxHP}";
-                MPText[i].text = $"MP: {playerData[i].currentMP}/{playerData[i].maxMP}";
-                levelText[i].text = $"Level: {playerData[i].playerLevel}";
-                expText[i].text = $"{playerData[i].currentExp}/{playerData[i].expToNextLevel[playerData[i].playerLevel]}";
-                expSlider[i].maxValue = playerData[i].expToNextLevel[playerData[i].playerLevel];
-                expSlider[i].value = playerData[i].currentExp;
-                charImage[i].sprite = playerData[i].charImage;
+                nameText[i].text = player.charName;
+                HPText[i].text = $"HP: {player.currentHP}/{player.maxHP}";
+                MPText[i].text = $"MP: {player.currentMP}/{player.maxMP}";
+                levelText[i].text = $"Level: {player.playerLevel}";
+                expText[i].text = $"{player.currentExp}/{player.expToNextLevel[player.playerLevel]}";
+                expSlider[i].maxValue = player.expToNextLevel[player.playerLevel];
+                expSlider[i].value = player.currentExp;
+                charImage[i].sprite = player.charImage;
             }
             else
             {
@@ -114,29 +122,31 @@ public class GameMenu : MonoBehaviour
 
     public void StatsChar(int selected)
     {
-        statsImage.sprite = playerData[selected].charImage;
-        statsName.text = playerData[selected].charName;
-        statsHP.text = $"{playerData[selected].currentHP}/{playerData[selected].maxHP}";
-        statsMP.text = $"{playerData[selected].currentMP}/{playerData[selected].maxMP}";
-        statsStrength.text = $"{playerData[selected].strength}";
-        statsDefence.text = $"{playerData[selected].defence}";
+        CharStats player = playerData[selected];
 
-        if (playerData[selected].equippedweapon != "")
+        statsImage.sprite = player.charImage;
+        statsName.text = player.charName;
+        statsHP.text = $"{player.currentHP}/{player.maxHP}";
+        statsMP.text = $"{player.currentMP}/{player.maxMP}";
+        statsStrength.text = $"{player.strength}";
+        statsDefence.text = $"{player.defence}";
+
+        if (player.equippedweapon != "")
         {
-            statsEquippedWeapon.text = $"{playerData[selected].equippedweapon}";
+            statsEquippedWeapon.text = $"{player.equippedweapon}";
         }
 
 
-        statsWeaponPower.text = $"{playerData[selected].weaponPower}";
+        statsWeaponPower.text = $"{player.weaponPower}";
 
-        if (playerData[selected].equippedArmour != "")
+        if (player.equippedArmour != "")
         {
-            statsEquippedArmour.text = $"{playerData[selected].equippedArmour}";
+            statsEquippedArmour.text = $"{player.equippedArmour}";
         }
 
 
-        statsArmourPower.text = $"{playerData[selected].armourPower}";
-        statsExp.text = $"{playerData[selected].expToNextLevel}";
+        statsArmourPower.text = $"{player.armourPower}";
+        statsExp.text = $"{player.expToNextLevel}";
 
     }
 }
