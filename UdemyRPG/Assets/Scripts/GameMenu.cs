@@ -7,7 +7,7 @@ public class GameMenu : MonoBehaviour
     [Header("Main")]
     public GameObject menuPanel;
     public GameObject[] windows;
-    private CharStats[] playerStats;
+    private CharStats[] playerData;
 
     [Space]
     [Header("Character Summary")]
@@ -19,7 +19,8 @@ public class GameMenu : MonoBehaviour
     [Space]
     [Header("Stats Details")]
     public GameObject[] playerButtons;
-
+    public TextMeshProUGUI statsName, statsHP, statsMP, statsStrength, statsDefence, statsEquippedWeapon, statsWeaponPower, statsEquippedArmour, statsArmourPower, statsExp;
+    public Image statsImage;
 
     void Start()
     {
@@ -45,21 +46,21 @@ public class GameMenu : MonoBehaviour
 
     public void UpdateMainStats()
     {
-        playerStats = GameManager.instance.playerStats;
+        playerData = GameManager.instance.playerStats;
 
-        for (int i = 0; i < playerStats.Length; i++)
+        for (int i = 0; i < playerData.Length; i++)
         {
-            if (playerStats[i].gameObject.activeInHierarchy)
+            if (playerData[i].gameObject.activeInHierarchy)
             {
                 charStatHolder[i].SetActive(true);
-                nameText[i].text = playerStats[i].charName;
-                HPText[i].text = $"HP: {playerStats[i].currentHP}/{playerStats[i].maxHP}";
-                MPText[i].text = $"MP: {playerStats[i].currentMP}/{playerStats[i].maxMP}";
-                levelText[i].text = $"Level: {playerStats[i].playerLevel}";
-                expText[i].text = $"{playerStats[i].currentExp}/{playerStats[i].expToNextLevel[playerStats[i].playerLevel]}";
-                expSlider[i].maxValue = playerStats[i].expToNextLevel[playerStats[i].playerLevel];
-                expSlider[i].value = playerStats[i].currentExp;
-                charImage[i].sprite = playerStats[i].charImage;
+                nameText[i].text = playerData[i].charName;
+                HPText[i].text = $"HP: {playerData[i].currentHP}/{playerData[i].maxHP}";
+                MPText[i].text = $"MP: {playerData[i].currentMP}/{playerData[i].maxMP}";
+                levelText[i].text = $"Level: {playerData[i].playerLevel}";
+                expText[i].text = $"{playerData[i].currentExp}/{playerData[i].expToNextLevel[playerData[i].playerLevel]}";
+                expSlider[i].maxValue = playerData[i].expToNextLevel[playerData[i].playerLevel];
+                expSlider[i].value = playerData[i].currentExp;
+                charImage[i].sprite = playerData[i].charImage;
             }
             else
             {
@@ -106,7 +107,24 @@ public class GameMenu : MonoBehaviour
 
         for (int i = 0; i < playerButtons.Length; i++)
         {
-            playerButtons[i].SetActive(playerStats[i].gameObject.activeInHierarchy);
+            playerButtons[i].SetActive(playerData[i].gameObject.activeInHierarchy);
+            playerButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = playerData[i].charName;
         }
+    }
+
+    public void StatsChar(int selected)
+    {
+        statsImage.sprite = playerData[selected].charImage;
+        statsName.text = playerData[selected].charName;
+        statsHP.text = $"{playerData[selected].currentHP}/{playerData[selected].maxHP}";
+        statsMP.text = $"{playerData[selected].currentMP}/{playerData[selected].maxMP}";
+        statsStrength.text = $"{playerData[selected].strength}";
+        statsDefence.text = $"{playerData[selected].defence}";
+        statsEquippedWeapon.text = $"{playerData[selected].equippedweapon}";
+        statsWeaponPower.text = $"{playerData[selected].weaponPower}";
+        statsEquippedArmour.text = $"{playerData[selected].equippedArmour}";
+        statsArmourPower.text = $"{playerData[selected].armourPower}";
+        statsExp.text = $"{playerData[selected].expToNextLevel}";
+
     }
 }
