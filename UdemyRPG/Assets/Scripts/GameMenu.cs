@@ -111,7 +111,7 @@ public class GameMenu : MonoBehaviour
 
         UpdateMainStats();
 
-        // update stuff
+        StatsChar(0);
 
         for (int i = 0; i < playerButtons.Length; i++)
         {
