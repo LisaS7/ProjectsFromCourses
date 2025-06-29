@@ -4,15 +4,21 @@ using UnityEngine.UI;
 
 public class GameMenu : MonoBehaviour
 {
+    [Header("Main")]
     public GameObject menuPanel;
     public GameObject[] windows;
-
     private CharStats[] playerStats;
 
+    [Space]
+    [Header("Character Summary")]
     public TextMeshProUGUI[] nameText, HPText, MPText, levelText, expText;
     public Slider[] expSlider;
     public Image[] charImage;
     public GameObject[] charStatHolder;
+
+    [Space]
+    [Header("Stats Details")]
+    public GameObject[] playerButtons;
 
 
     void Start()
@@ -47,7 +53,7 @@ public class GameMenu : MonoBehaviour
             {
                 charStatHolder[i].SetActive(true);
                 nameText[i].text = playerStats[i].charName;
-                HPText[i].text = $"HP: {playerStats[i].currentExp}/{playerStats[i].maxHP}";
+                HPText[i].text = $"HP: {playerStats[i].currentHP}/{playerStats[i].maxHP}";
                 MPText[i].text = $"MP: {playerStats[i].currentMP}/{playerStats[i].maxMP}";
                 levelText[i].text = $"Level: {playerStats[i].playerLevel}";
                 expText[i].text = $"{playerStats[i].currentExp}/{playerStats[i].expToNextLevel[playerStats[i].playerLevel]}";
@@ -64,6 +70,8 @@ public class GameMenu : MonoBehaviour
 
     public void ToggleWindow(int windowNumber)
     {
+        UpdateMainStats();
+
         for (int i = 0; i < windows.Length; i++)
         {
             if (i == windowNumber)
@@ -87,5 +95,18 @@ public class GameMenu : MonoBehaviour
         menuPanel.SetActive(false);
 
         GameManager.instance.menuActive = false;
+    }
+
+    public void OpenStats()
+    {
+
+        UpdateMainStats();
+
+        // update stuff
+
+        for (int i = 0; i < playerButtons.Length; i++)
+        {
+            playerButtons[i].SetActive(playerStats[i].gameObject.activeInHierarchy);
+        }
     }
 }
