@@ -146,7 +146,7 @@ public class GameMenu : MonoBehaviour
 
 
         statsArmourPower.text = $"{player.armourPower}";
-        statsExp.text = $"{player.expToNextLevel[player.playerLevel]}";
+        statsExp.text = $"{player.expToNextLevel[player.playerLevel] - player.currentExp}";
 
     }
 }
