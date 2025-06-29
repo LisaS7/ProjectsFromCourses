@@ -21,7 +21,7 @@ public class CharStats : MonoBehaviour
     public int defence;
     public int weaponPower;
     public int armourPower;
-    public string equippedweapon;
+    public string equippedWeapon;
     public string equippedArmour;
 
 

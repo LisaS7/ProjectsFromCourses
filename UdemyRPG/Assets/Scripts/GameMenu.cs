@@ -131,9 +131,9 @@ public class GameMenu : MonoBehaviour
         statsStrength.text = $"{player.strength}";
         statsDefence.text = $"{player.defence}";
 
-        if (player.equippedweapon != "")
+        if (player.equippedWeapon != "")
         {
-            statsEquippedWeapon.text = $"{player.equippedweapon}";
+            statsEquippedWeapon.text = $"{player.equippedWeapon}";
         }
 
 
@@ -146,7 +146,7 @@ public class GameMenu : MonoBehaviour
 
 
         statsArmourPower.text = $"{player.armourPower}";
-        statsExp.text = $"{player.expToNextLevel}";
+        statsExp.text = $"{player.expToNextLevel[player.playerLevel]}";
 
     }
 }
