@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class GameMenu : MonoBehaviour
 {
     public GameObject menuPanel;
+    public GameObject[] windows;
+
     private CharStats[] playerStats;
+
     public TextMeshProUGUI[] nameText, HPText, MPText, levelText, expText;
     public Slider[] expSlider;
     public Image[] charImage;
@@ -23,8 +26,7 @@ public class GameMenu : MonoBehaviour
         {
             if (menuPanel.activeInHierarchy)
             {
-                menuPanel.SetActive(false);
-                GameManager.instance.menuActive = false;
+                CloseMenu();
             }
             else
             {
@@ -58,5 +60,32 @@ public class GameMenu : MonoBehaviour
                 charStatHolder[i].SetActive(false);
             }
         }
+    }
+
+    public void ToggleWindow(int windowNumber)
+    {
+        for (int i = 0; i < windows.Length; i++)
+        {
+            if (i == windowNumber)
+            {
+                windows[i].SetActive(!windows[i].activeInHierarchy);
+            }
+            else
+            {
+                windows[i].SetActive(false);
+            }
+        }
+    }
+
+    public void CloseMenu()
+    {
+        for (int i = 0; i < windows.Length; i++)
+        {
+            windows[i].SetActive(false);
+        }
+
+        menuPanel.SetActive(false);
+
+        GameManager.instance.menuActive = false;
     }
 }
