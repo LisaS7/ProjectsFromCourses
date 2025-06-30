@@ -26391,7 +26391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
       propertyPath: 'itemsHeld.Array.data[8]'
-      value: 
+      value: Health potion
       objectReference: {fileID: 0}
     - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
       propertyPath: 'itemsHeld.Array.data[9]'
@@ -26400,6 +26400,10 @@ PrefabInstance:
     - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
       propertyPath: 'itemsHeld.Array.data[10]'
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
+      propertyPath: 'itemsHeld.Array.data[15]'
+      value: Metal armour
       objectReference: {fileID: 0}
     - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
       propertyPath: itemsQuantity.Array.size
@@ -26424,6 +26428,14 @@ PrefabInstance:
     - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
       propertyPath: 'itemsQuantity.Array.data[3]'
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
+      propertyPath: 'itemsQuantity.Array.data[8]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
+      propertyPath: 'itemsQuantity.Array.data[15]'
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 249541995906407329, guid: a7beb57a4464f4b57b78b17394dc82d2, type: 3}
       propertyPath: 'referenceItems.Array.data[0]'

@@ -163,6 +163,8 @@ public class GameMenu : MonoBehaviour
 
     public void ShowItems()
     {
+        GameManager.instance.SortItems();
+
         for (int i = 0; i < itemButtons.Length; i++)
         {
             // cache refs
@@ -179,7 +181,6 @@ public class GameMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Item {i} is null");
                 itemBtn.buttonImage.gameObject.SetActive(false);
                 itemBtn.quantityText.text = "";
             }
