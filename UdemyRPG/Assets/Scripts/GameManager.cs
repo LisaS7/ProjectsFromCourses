@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
 
     public Item GetItemDetails(string itemNeeded)
     {
-        for (int i = 0; i < itemsHeld.Length; i++)
+        for (int i = 0; i < referenceItems.Length; i++)
         {
-            if (referenceItems[i].itemName == itemNeeded)
+            if (string.Equals(referenceItems[i].itemName, itemNeeded, System.StringComparison.OrdinalIgnoreCase))
             {
                 return referenceItems[i];
             }
