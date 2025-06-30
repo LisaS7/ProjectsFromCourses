@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerController.instance.canMove = true;
         }
+
     }
 
     public Item GetItemDetails(string itemNeeded)
@@ -68,5 +69,52 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void AddItem(string item)
+    {
+        int newItemPosition = 0;
+        bool foundSpace = false;
+
+        for (int i = 0; i < itemsHeld.Length; i++)
+        {
+            if (itemsHeld[i] == "" || itemsHeld[i] == item)
+            {
+                newItemPosition = i;
+                i = itemsHeld.Length;
+                foundSpace = true;
+            }
+        }
+
+        if (foundSpace)
+        {
+            bool itemExists = false;
+            for (int i = 0; i < referenceItems.Length; i++)
+            {
+                if (referenceItems[i].itemName == item)
+                {
+                    itemExists = true;
+
+                    i = referenceItems.Length;
+                }
+            }
+
+            if (itemExists)
+            {
+                itemsHeld[newItemPosition] = item;
+                itemsQuantity[newItemPosition]++;
+            }
+            else
+            {
+                Debug.LogError($"Item {item} not found");
+            }
+        }
+
+        GameMenu.instance.ShowItems();
+    }
+
+    public void RemoveItem(string item)
+    {
+
     }
 }
