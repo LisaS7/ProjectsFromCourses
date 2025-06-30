@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &283206824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3381456223459786968, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+  m_PrefabInstance: {fileID: 1985674002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &395871859
 GameObject:
   m_ObjectHideFlags: 0
@@ -25128,6 +25139,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a9dda0384824c4b81a3b04019ce053, type: 3}
+--- !u!114 &1958375393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3968409985411421616, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+  m_PrefabInstance: {fileID: 1985674002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1985674002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25796,6 +25818,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: itemName
+      value: 
+      objectReference: {fileID: 2090658185}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: useButtonText
+      value: 
+      objectReference: {fileID: 283206824}
+    - target: {fileID: 4264282857162695364, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+      propertyPath: itemDescription
+      value: 
+      objectReference: {fileID: 1958375393}
     - target: {fileID: 4645893592744303167, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -26276,6 +26310,17 @@ Transform:
   - {fileID: 1334479922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090658185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8664474624762931177, guid: 4e92e5ee016c348a9a315d06dfcda1b7, type: 3}
+  m_PrefabInstance: {fileID: 1985674002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2137771655
 PrefabInstance:
   m_ObjectHideFlags: 0

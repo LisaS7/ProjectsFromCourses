@@ -8,6 +8,7 @@ public class GameMenu : MonoBehaviour
     public GameObject menuPanel;
     public GameObject[] windows;
     private CharStats[] playerData;
+    public static GameMenu instance;
 
     [Space]
     [Header("Character Summary")]
@@ -25,10 +26,13 @@ public class GameMenu : MonoBehaviour
     [Space]
     [Header("Items")]
     public ItemButton[] itemButtons;
+    public string selectedItem;
+    public Item activeItem;
+    public TextMeshProUGUI itemName, itemDescription, useButtonText;
 
     void Start()
     {
-
+        instance = this;
     }
 
     void Update()
@@ -185,5 +189,22 @@ public class GameMenu : MonoBehaviour
                 itemBtn.quantityText.text = "";
             }
         }
+    }
+
+    public void SelectItem(Item newItem)
+    {
+        activeItem = newItem;
+        if (activeItem.isItem)
+        {
+            useButtonText.text = "Use";
+        }
+
+        if (activeItem.isWeapon || activeItem.isArmour)
+        {
+            useButtonText.text = "Equip";
+        }
+
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
     }
 }
