@@ -22,6 +22,10 @@ public class GameMenu : MonoBehaviour
     public TextMeshProUGUI statsName, statsHP, statsMP, statsStrength, statsDefence, statsEquippedWeapon, statsWeaponPower, statsEquippedArmour, statsArmourPower, statsExp;
     public Image statsImage;
 
+    [Space]
+    [Header("Items")]
+    public ItemButton[] itemButtons;
+
     void Start()
     {
 
@@ -46,6 +50,7 @@ public class GameMenu : MonoBehaviour
 
     public void UpdateMainStats()
     {
+        // cache ref
         playerData = GameManager.instance.playerStats;
 
         if (playerData == null || playerData.Length == 0)
@@ -85,7 +90,13 @@ public class GameMenu : MonoBehaviour
         {
             if (i == windowNumber)
             {
-                windows[i].SetActive(!windows[i].activeInHierarchy);
+                bool isActive = windows[i].activeInHierarchy;
+                windows[i].SetActive(!isActive);
+
+                if (isActive && i == 0)
+                {
+                    ShowItems();
+                }
             }
             else
             {
@@ -148,5 +159,30 @@ public class GameMenu : MonoBehaviour
         statsArmourPower.text = $"{player.armourPower}";
         statsExp.text = $"{player.expToNextLevel[player.playerLevel] - player.currentExp}";
 
+    }
+
+    public void ShowItems()
+    {
+        for (int i = 0; i < itemButtons.Length; i++)
+        {
+            // cache refs
+            ItemButton itemBtn = itemButtons[i];
+            GameManager gameManager = GameManager.instance;
+
+            itemBtn.buttonValue = i;
+
+            if (!string.IsNullOrEmpty(gameManager.itemsHeld[i]))
+            {
+                itemBtn.buttonImage.gameObject.SetActive(true);
+                itemBtn.buttonImage.sprite = gameManager.GetItemDetails(gameManager.itemsHeld[i]).itemSprite;
+                itemBtn.quantityText.text = gameManager.itemsQuantity[i].ToString();
+            }
+            else
+            {
+                Debug.Log($"Item {i} is null");
+                itemBtn.buttonImage.gameObject.SetActive(false);
+                itemBtn.quantityText.text = "";
+            }
+        }
     }
 }
