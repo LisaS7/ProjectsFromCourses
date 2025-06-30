@@ -115,6 +115,34 @@ public class GameManager : MonoBehaviour
 
     public void RemoveItem(string item)
     {
+        int itemPosition = 0;
+        bool foundItem = false;
 
+        for (int i = 0; i < itemsHeld.Length; i++)
+        {
+            if (itemsHeld[i] == item)
+            {
+                foundItem = true;
+                itemPosition = i;
+
+                i = itemsHeld.Length;
+            }
+        }
+
+        if (foundItem)
+        {
+            itemsQuantity[itemPosition]--;
+
+            if (itemsQuantity[itemPosition] <= 0)
+            {
+                itemsHeld[itemPosition] = "";
+            }
+
+            GameMenu.instance.ShowItems();
+        }
+        else
+        {
+            Debug.LogError($"Couldn't find {item}");
+        }
     }
 }
