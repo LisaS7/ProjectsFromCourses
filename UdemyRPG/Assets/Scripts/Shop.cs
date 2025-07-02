@@ -9,6 +9,10 @@ public class Shop : MonoBehaviour
     public GameObject sellMenu;
     public TextMeshProUGUI goldText;
 
+    public string[] ItemsForSale;
+
+    public ItemButton[] buyItemButtons, sellItemButtons;
+
 
     void Start()
     {
@@ -32,13 +36,34 @@ public class Shop : MonoBehaviour
     public void CloseShop()
     {
         shopMenu.SetActive(false);
-        GameManager.instance.shopActive = true;
+        GameManager.instance.shopActive = false;
     }
 
     public void OpenBuyMenu()
     {
         buyMenu.SetActive(true);
         sellMenu.SetActive(false);
+
+        for (int i = 0; i < buyItemButtons.Length; i++)
+        {
+            // cache refs
+            ItemButton itemBtn = buyItemButtons[i];
+            GameManager gameManager = GameManager.instance;
+
+            itemBtn.buttonValue = i;
+
+            if (ItemsForSale[i] != "")
+            {
+                itemBtn.buttonImage.gameObject.SetActive(true);
+                itemBtn.buttonImage.sprite = gameManager.GetItemDetails(ItemsForSale[i]).itemSprite;
+                itemBtn.quantityText.text = "";
+            }
+            else
+            {
+                itemBtn.buttonImage.gameObject.SetActive(false);
+                itemBtn.quantityText.text = "";
+            }
+        }
     }
 
     public void OpenSellMenu()
