@@ -60,7 +60,7 @@ MonoBehaviour:
   defence: 16
   weaponPower: 0
   armourPower: 0
-  equippedweapon: 
+  equippedWeapon: 
   equippedArmour: 
 --- !u!1 &3522637778930962094
 GameObject:
@@ -113,6 +113,56 @@ MonoBehaviour:
   - {fileID: 4982764435228615108}
   - {fileID: 1296924520428650515}
   - {fileID: 5813395682883241324}
+  menuActive: 0
+  dialogActive: 0
+  fadeActive: 0
+  shopActive: 0
+  itemsHeld:
+  - Health Potion
+  - Mana Potion
+  - Wooden sword
+  - Metal armour
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  itemsQuantity: 050000000200000001000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  referenceItems:
+  - {fileID: 191242076686105060, guid: e6238c9b697e941bf8f27ca7f851725a, type: 3}
+  - {fileID: 8794274187316440966, guid: 6324c340c1cc244f4ae9f517a6a8f829, type: 3}
+  - {fileID: 3601865771673746241, guid: 434d6820710fe4bf796c86532daec3d4, type: 3}
+  - {fileID: 6527937761803993568, guid: da3c98751fdb84cd193a101e3610e08d, type: 3}
+  - {fileID: 5751807054848166203, guid: 994d3f0cd256f4081b76414c1ccac050, type: 3}
+  - {fileID: 2948289629704464794, guid: 305f6ebbb1c3140bebaffa09753fe402, type: 3}
+  currentGold: 0
 --- !u!1 &4132068563403805979
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +223,7 @@ MonoBehaviour:
   defence: 16
   weaponPower: 0
   armourPower: 0
-  equippedweapon: 
+  equippedWeapon: 
   equippedArmour: 
 --- !u!1 &5972293176779775492
 GameObject:
@@ -235,5 +285,5 @@ MonoBehaviour:
   defence: 12
   weaponPower: 0
   armourPower: 0
-  equippedweapon: 
+  equippedWeapon: 
   equippedArmour: 
