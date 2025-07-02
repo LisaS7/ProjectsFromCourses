@@ -24,6 +24,7 @@ public class Shop : MonoBehaviour
     {
         shopMenu.SetActive(true);
         GameManager.instance.shopActive = true;
+        OpenBuyMenu();
 
         goldText.text = GameManager.instance.currentGold.ToString();
     }
