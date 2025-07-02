@@ -77,7 +77,11 @@ public class Shop : MonoBehaviour
         sellItemButtons[0].Press();
         buyMenu.SetActive(false);
         sellMenu.SetActive(true);
+        ShowSellItems();
+    }
 
+    void ShowSellItems()
+    {
         GameManager.instance.SortItems();
 
         for (int i = 0; i < sellItemButtons.Length; i++)
@@ -120,19 +124,31 @@ public class Shop : MonoBehaviour
 
     public void BuyItem()
     {
-        GameManager gm = GameManager.instance;
-
-        if (gm.currentGold >= selectedItem.value)
+        if (selectedItem != null)
         {
-            gm.currentGold -= selectedItem.value;
-            gm.AddItem(selectedItem.itemName);
-        }
 
-        goldText.text = gm.currentGold.ToString();
+            GameManager gm = GameManager.instance;
+
+            if (gm.currentGold >= selectedItem.value)
+            {
+                gm.currentGold -= selectedItem.value;
+                gm.AddItem(selectedItem.itemName);
+            }
+
+            goldText.text = gm.currentGold.ToString();
+        }
     }
 
     public void SellItem()
     {
+        if (selectedItem != null)
+        {
+            GameManager gm = GameManager.instance;
+            gm.currentGold += Mathf.FloorToInt(selectedItem.value * 0.75f);
+            gm.RemoveItem(selectedItem.itemName);
+            goldText.text = gm.currentGold.ToString();
+        }
 
+        ShowSellItems();
     }
 }
