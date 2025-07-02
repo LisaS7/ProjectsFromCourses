@@ -190,6 +190,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Shopkeeper
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 17
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0922f3558182d44c58085af6f6775f28
+      internalID: 1643165350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -205,6 +227,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       NPC_0: 21300000
+      Shopkeeper: 1643165350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
