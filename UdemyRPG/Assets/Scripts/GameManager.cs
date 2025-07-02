@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public CharStats[] playerStats;
 
     [Header("Game Status")]
-    public bool menuActive, dialogActive, fadeActive;
+    public bool menuActive, dialogActive, fadeActive, shopActive;
 
     [Header("Items")]
     public string[] itemsHeld;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (menuActive || dialogActive || fadeActive)
+        if (menuActive || dialogActive || fadeActive || shopActive)
         {
             PlayerController.instance.canMove = false;
         }
