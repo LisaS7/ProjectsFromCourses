@@ -24,13 +24,33 @@ public class ItemButton : MonoBehaviour
         GameManager gm = GameManager.instance;
         string itemName = gm.itemsHeld[buttonValue];
 
-        if (itemName != "")
+        if (GameMenu.instance.menuPanel.activeInHierarchy)
         {
-            GameMenu.instance.SelectItem(gm.GetItemDetails(itemName));
+            if (itemName != "")
+            {
+                GameMenu.instance.SelectItem(gm.GetItemDetails(itemName));
+            }
+            else
+            {
+                Debug.Log($"Item not found: {itemName}");
+            }
         }
-        else
+
+        if (Shop.instance.shopMenu.activeInHierarchy)
         {
-            Debug.Log($"Item not found: {itemName}");
+            Shop shop = Shop.instance;
+
+            if (shop.buyMenu.activeInHierarchy)
+            {
+                string item = shop.ItemsForSale[buttonValue];
+                shop.SelectBuyItem(gm.GetItemDetails(item));
+            }
+
+            if (shop.sellMenu.activeInHierarchy)
+            {
+                string item = gm.itemsHeld[buttonValue];
+                shop.SelectSellItem(gm.GetItemDetails(item));
+            }
         }
     }
 }

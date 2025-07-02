@@ -13,6 +13,11 @@ public class Shop : MonoBehaviour
 
     public ItemButton[] buyItemButtons, sellItemButtons;
 
+    public Item selectedItem;
+    public TextMeshProUGUI buyItemName, buyItemDescription, buyItemValue;
+    public TextMeshProUGUI sellItemName, sellItemDescription, sellItemValue;
+
+
 
     void Start()
     {
@@ -93,5 +98,21 @@ public class Shop : MonoBehaviour
                 itemBtn.quantityText.text = "";
             }
         }
+    }
+
+    public void SelectBuyItem(Item item)
+    {
+        selectedItem = item;
+        buyItemName.text = selectedItem.itemName;
+        buyItemDescription.text = selectedItem.description;
+        buyItemValue.text = "Value: " + selectedItem.value;
+    }
+
+    public void SelectSellItem(Item item)
+    {
+        selectedItem = item;
+        sellItemName.text = selectedItem.itemName;
+        sellItemDescription.text = selectedItem.description;
+        sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * 0.7f);
     }
 }
