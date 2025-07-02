@@ -117,4 +117,22 @@ public class Shop : MonoBehaviour
         sellItemDescription.text = selectedItem.description;
         sellItemValue.text = "Value: " + Mathf.FloorToInt(selectedItem.value * 0.7f);
     }
+
+    public void BuyItem()
+    {
+        GameManager gm = GameManager.instance;
+
+        if (gm.currentGold >= selectedItem.value)
+        {
+            gm.currentGold -= selectedItem.value;
+            gm.AddItem(selectedItem.itemName);
+        }
+
+        goldText.text = gm.currentGold.ToString();
+    }
+
+    public void SellItem()
+    {
+
+    }
 }
