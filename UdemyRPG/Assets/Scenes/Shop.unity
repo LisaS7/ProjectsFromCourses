@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.41
       objectReference: {fileID: 0}
+    - target: {fileID: 7239143207605727119, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
+      propertyPath: nextArea
+      value: Town
+      objectReference: {fileID: 0}
     - target: {fileID: 7276590695171780503, guid: f37385640035f4e3c97cd40a79497a91, type: 3}
       propertyPath: m_Name
       value: ExitArea
