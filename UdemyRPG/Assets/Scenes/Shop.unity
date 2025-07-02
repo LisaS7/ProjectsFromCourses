@@ -11336,7 +11336,116 @@ MonoBehaviour:
   buyMenu: {fileID: 1198911878}
   sellMenu: {fileID: 1871840732}
   goldText: {fileID: 609168868}
-  ItemsForSale: []
+  ItemsForSale:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  buyItemButtons:
+  - {fileID: 84722750}
+  - {fileID: 1831175429}
+  - {fileID: 975486102}
+  - {fileID: 1023405422}
+  - {fileID: 1210956891}
+  - {fileID: 117579734}
+  - {fileID: 487407335}
+  - {fileID: 818945241}
+  - {fileID: 1065496966}
+  - {fileID: 1686205573}
+  - {fileID: 1999628591}
+  - {fileID: 2127453450}
+  - {fileID: 246872899}
+  - {fileID: 2006102075}
+  - {fileID: 398217689}
+  - {fileID: 467763401}
+  - {fileID: 934011157}
+  - {fileID: 1179621589}
+  - {fileID: 292551458}
+  - {fileID: 421881462}
+  - {fileID: 2091919551}
+  - {fileID: 527380413}
+  - {fileID: 1146005181}
+  - {fileID: 298081929}
+  - {fileID: 1858738937}
+  - {fileID: 1538609206}
+  - {fileID: 1942187455}
+  - {fileID: 92990668}
+  - {fileID: 1148102812}
+  - {fileID: 768639136}
+  - {fileID: 24507411}
+  - {fileID: 1218317165}
+  - {fileID: 690243949}
+  - {fileID: 1003792620}
+  - {fileID: 1101668679}
+  - {fileID: 557812268}
+  sellItemButtons:
+  - {fileID: 997408608}
+  - {fileID: 1345513367}
+  - {fileID: 432993688}
+  - {fileID: 2040186533}
+  - {fileID: 1558210246}
+  - {fileID: 1991285171}
+  - {fileID: 110774145}
+  - {fileID: 883877011}
+  - {fileID: 1791627444}
+  - {fileID: 1080287782}
+  - {fileID: 574454047}
+  - {fileID: 1155838512}
+  - {fileID: 399705643}
+  - {fileID: 1813520062}
+  - {fileID: 580134269}
+  - {fileID: 1412670224}
+  - {fileID: 2070117161}
+  - {fileID: 606609835}
+  - {fileID: 1932144073}
+  - {fileID: 402840099}
+  - {fileID: 1341296665}
+  - {fileID: 18163548}
+  - {fileID: 1976538846}
+  - {fileID: 280235899}
+  - {fileID: 211485046}
+  - {fileID: 1804752556}
+  - {fileID: 1316031580}
+  - {fileID: 1687546975}
+  - {fileID: 492229778}
+  - {fileID: 1868707189}
+  - {fileID: 1827393270}
+  - {fileID: 593145773}
+  - {fileID: 1274455159}
+  - {fileID: 543589024}
+  - {fileID: 2130185156}
+  - {fileID: 548963915}
 --- !u!1 &727981782
 GameObject:
   m_ObjectHideFlags: 0
@@ -15211,6 +15320,40 @@ MonoBehaviour:
   ItemsForSale:
   - Health Potion
   - Metal Sword
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &975486099
 GameObject:
   m_ObjectHideFlags: 0
