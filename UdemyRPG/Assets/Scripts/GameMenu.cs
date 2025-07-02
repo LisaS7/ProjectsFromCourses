@@ -33,6 +33,10 @@ public class GameMenu : MonoBehaviour
     public GameObject itemCharChoiceMenu;
     public TextMeshProUGUI[] charChoiceNames;
 
+    [Space]
+    [Header("Gold")]
+    public TextMeshProUGUI goldText;
+
     void Start()
     {
         instance = this;
@@ -87,6 +91,8 @@ public class GameMenu : MonoBehaviour
                 charStatHolder[i].SetActive(false);
             }
         }
+
+        goldText.text = GameManager.instance.currentGold.ToString();
     }
 
     public void ToggleWindow(int windowNumber)

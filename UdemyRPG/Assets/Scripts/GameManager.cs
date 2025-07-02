@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public int[] itemsQuantity;
     public Item[] referenceItems;
 
+    [Header("Currency")]
+    public int currentGold;
+
     void Start()
     {
         instance = this;
