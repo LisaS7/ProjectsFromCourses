@@ -46,6 +46,7 @@ public class Shop : MonoBehaviour
 
     public void OpenBuyMenu()
     {
+        buyItemButtons[0].Press();
         buyMenu.SetActive(true);
         sellMenu.SetActive(false);
 
@@ -73,6 +74,7 @@ public class Shop : MonoBehaviour
 
     public void OpenSellMenu()
     {
+        sellItemButtons[0].Press();
         buyMenu.SetActive(false);
         sellMenu.SetActive(true);
 
