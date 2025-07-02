@@ -70,5 +70,28 @@ public class Shop : MonoBehaviour
     {
         buyMenu.SetActive(false);
         sellMenu.SetActive(true);
+
+        GameManager.instance.SortItems();
+
+        for (int i = 0; i < sellItemButtons.Length; i++)
+        {
+            // cache refs
+            ItemButton itemBtn = sellItemButtons[i];
+            GameManager gameManager = GameManager.instance;
+
+            itemBtn.buttonValue = i;
+
+            if (!string.IsNullOrEmpty(gameManager.itemsHeld[i]))
+            {
+                itemBtn.buttonImage.gameObject.SetActive(true);
+                itemBtn.buttonImage.sprite = gameManager.GetItemDetails(gameManager.itemsHeld[i]).itemSprite;
+                itemBtn.quantityText.text = gameManager.itemsQuantity[i].ToString();
+            }
+            else
+            {
+                itemBtn.buttonImage.gameObject.SetActive(false);
+                itemBtn.quantityText.text = "";
+            }
+        }
     }
 }
