@@ -1,1 +1,1 @@
-This repo contains code from various Udemy courses. None of this is my own original code.
+This repo contains code from various Udemy courses with some additions and amendment. Basically, very little of this is my own code.
